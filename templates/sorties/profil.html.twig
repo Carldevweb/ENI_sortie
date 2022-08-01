@@ -1,0 +1,53 @@
+<h1>Mon profil</h1>
+
+<div class="container">
+
+    <form method="post">
+        <label for="Pseudonyme">Pseudo : </label>
+        <input class="formulaire" type="text" name="Pseudonyme" id="Pseudonyme" maxlength="15"><br/><br />
+
+        <label for="Prenom">Prénom : </label>
+        <input class="formulaire" type="text" name="Prenom" id="Prenom" maxlength="15"><br /><br />
+
+        <label for="Nom">Nom : </label>
+        <input class="formulaire" type="text" name="Nom" id="Nom" maxlength="15"><br /><br />
+
+        <label for="Telephone">Téléphone : </label>
+        <input class="formulaire" type="tel" name="Telephone" id="Telephone" maxlength="15"><br /><br />
+
+        <label for="Email">Email : </label>
+        <input class="formulaire" type="email" name="email" id="email"><br /><br />
+
+        <label for="Motdepasse">Mot de passe : </label>
+        <input class="formulaire" type="password" name="Motdepasse" id="Motdepasse" maxlength="15"><br /><br />
+
+        <label for="Motdepasseconfirmation">Confirmation : </label>
+        <input class="formulaire" type="password" name="Motdepasseconfirmation" id="Motdepasseconfirmation" maxlength="15"><br /><br />
+
+        <label for="Campus">Campus :</label>
+        <select name="campus" name="campus-select">
+            <option value="">Veuillez choisir un campus</option>
+            <option value="paris">Paris</option>
+            <option value="bordeaux">Bordeaux</option>
+            <option value="lyon">Lyon</option>
+            <option value="rennes">Rennes</option>
+            <option value="nantes">Nantes</option>
+        </select>
+
+        <label name="photo">Ma photo</label>
+        <input type = file id="avatar" name="avatar" accept="image/jpeg, image/png" value="Télécharger vers le serveur">
+    </form>
+
+    <div class="container2">
+
+        <div class="btnsave">
+            <a href="#">Enregistrer</a>
+        </div>
+
+        <div class="btncancel">
+            <a href="#">Annuler</a>
+        </div>
+
+    </div>
+
+</div>

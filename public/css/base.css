@@ -7,6 +7,20 @@ img {
     height : 300px;
 }
 
+nav ul{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav {
+    display: flex;
+}
+
 .copyright {
     display: flex;
     flex-direction: row;

@@ -1,0 +1,25 @@
+body {
+    background-color: darkgrey;
+}
+
+img {
+    width : 300px;
+    height : 300px;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.mdpForget {
+    display: flex;
+    justify-content: center;
+}

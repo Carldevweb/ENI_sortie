@@ -3,17 +3,17 @@
     A Web Page
 {% endblock %}
  {% block body %}
-     <h3>Filter les sorties</h3>
+     <h3 style="color:black;">Filter les sorties</h3>
      <form>
          <table>
              <tr>
                  <td>
                      <table>
                          <tr>
-                             <td>
+                             <td style="white-space: normal; width:100px; color:black;">
                                  Compus
                              </td>
-                             <td>
+                             <td style="white-space: normal; width:100px;">
                                  <select class="form-control" id="supervisor">
                                      {% for i  in 0..3 %}
                                          {% set selected = '' %}
@@ -23,7 +23,7 @@
                              </td>
                          </tr>
                          <tr>
-                             <td>
+                             <td style="color:black;">
                                  Le nom de la sotrie contient:
                              </td>
                              <td>
@@ -31,15 +31,15 @@
                              </td>
                          </tr>
                          <tr>
-                             <td>Entre</td>
+                             <td style="color:black;">Entre</td>
                              <td><input type="date" placeholder="Select Date"></td>
-                             <td>et</td>
+                             <td style="white-space: normal; width:30px;color:black;">et</td>
                              <td><input type="date" placeholder="Select Date"></td>
                          </tr>
                      </table>
                  </td>
 
-                 <td>
+                 <td style="color:black;">
                      <input type="checkbox" id="check1" name="check1" checked>
                      <label for="check1">Sorties dont je suis l'organisateur/trice</label>
                  <br>

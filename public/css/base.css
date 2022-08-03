@@ -1,19 +1,28 @@
+
+body {
+    font-family: Calibri;
+    font-size: 18px;
+    color : whitesmoke;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 header {
     background-color: whitesmoke;
     margin-bottom: 20px;
     color : black;
+    margin : 0;
 }
 
-
-body {
+main {
+    flex: 1;
+    padding: 3rem 0;
     background: #005AA7;  /* fallback for old browsers */
     background: linear-gradient(to left, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: -webkit-linear-gradient(to left, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
-    font-family: Caladea;
-    font-size: 18px;
-    color : whitesmoke;
-    margin: 0;
-    padding: 0;
 }
 
 img {
@@ -24,60 +33,6 @@ img {
 
 }
 
-nav a {
-    text-decoration: none;
-    color: inherit;
-
-}
-
-
-
-nav a:hover{
-    color: rgb(6, 71, 167);
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    flex-wrap: wrap;
-}
-
-nav li {
-    margin-right: 1rem;
-}
-
-nav {
-    font-size: 22px;
-    display: block;
-
-}
-
-.container
-{
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-.left
-{
-    display: flex;
-    text-align: start;
-    align-items: center;
-    justify-content: space-evenly;
-
-
-}
-
-.right
-{
-    display: flex;
-    text-align: end;
-    align-items: center;
-    justify-content: space-evenly;
-
-}
 
 .copyright {
     display: flex;
@@ -100,4 +55,5 @@ footer {
     background-color: whitesmoke;
     margin-bottom: 20px;
     color : black;
+    margin : 0;
 }

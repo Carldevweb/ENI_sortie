@@ -1,33 +1,37 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('img/sortirLogo.PNG') }}">
-    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="{{ asset('img/sortirLogo.PNG') }}">
+        <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
 
-    <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
-</head>
-<body>
-<header>
+        <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
+    </head>
 
-{% include("inc/nav.html.twig") %}
-</header>
-<main>
+    <body>
 
-    {% block body %}
+        <header>
 
-    {% endblock %}
+        {% include("inc/nav.html.twig") %}
+        </header>
+
+        <main>
+
+            {% block body %}
+
+            {% endblock %}
 
 
-</main>
-</body>
-<footer>
-    <div class="copyright">
-    <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
-    </div>
-</footer>
+        </main>
+
+        <footer>
+            <div class="copyright">
+            <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
+            </div>
+        </footer>
+    </body>
 </html>

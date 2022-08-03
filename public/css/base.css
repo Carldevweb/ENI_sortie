@@ -1,19 +1,28 @@
+
+body {
+    font-family: Caladea;
+    font-size: 18px;
+    color : whitesmoke;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
 header {
     background-color: whitesmoke;
     margin-bottom: 20px;
     color : black;
+    margin : 0;
 }
 
-
-body {
+main {
+    flex: 1;
+    padding: 3rem 0;
     background: #005AA7;  /* fallback for old browsers */
     background: linear-gradient(to left, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: -webkit-linear-gradient(to left, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
-    font-family: Caladea;
-    font-size: 18px;
-    color : whitesmoke;
-    margin: 0;
-    padding: 0;
 }
 
 img {
@@ -100,4 +109,5 @@ footer {
     background-color: whitesmoke;
     margin-bottom: 20px;
     color : black;
+    margin : 0;
 }

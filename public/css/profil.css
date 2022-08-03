@@ -1,5 +1,6 @@
 label {
-    display: block;
+    display: inline-block;
+    width: 300px;
 }
 
 input,
@@ -7,6 +8,22 @@ textarea,
 select {
     margin-bottom: 1rem;
     box-sizing: border-box;
-    width: 200px;
-    max-width: 50%;
+    width: 300px;
+    max-width: 60%;
 }
+
+input,
+select
+{
+    margin-left: 100px;
+    padding: 5px 5px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+

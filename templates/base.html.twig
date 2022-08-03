@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('img/sortirLogo.PNG') }}">
     <link rel="stylesheet" href="{{ asset('css/base.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+
     <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
 </head>
 <body>
@@ -19,15 +20,14 @@
 
     {% block body %}
 
-
     {% endblock %}
 
 
 </main>
+</body>
 <footer>
     <div class="copyright">
     <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
     </div>
 </footer>
-</body>
 </html>

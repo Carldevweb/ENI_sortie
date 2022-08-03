@@ -1,16 +1,46 @@
+header {
+    background-color: whitesmoke;
+    margin-bottom: 20px;
+    color : black;
+}
+
+
 body {
-    background-color: darkgrey;
+    background: #005AA7;  /* fallback for old browsers */
+    background: linear-gradient(to left, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    font-family: Caladea;
+    font-size: 18px;
+    color : whitesmoke;
+    margin: 0;
+    padding: 0;
 }
 
 img {
-    width : 300px;
-    height : 300px;
+    max-width: 100%;
+    height: auto;
+    width: 275px;
+    height: 175px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+
+
+nav a:hover{
+    color: rgb(6, 71, 167);
 }
 
 nav ul{
     display: flex;
     list-style: none;
     padding-left: 0;
+    flex-wrap: wrap;
 }
 
 nav li {
@@ -18,7 +48,35 @@ nav li {
 }
 
 nav {
+    font-size: 22px;
+    display: block;
+
+}
+
+.container
+{
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.left
+{
     display: flex;
+    text-align: start;
+    align-items: center;
+    justify-content: space-evenly;
+
+
+}
+
+.right
+{
+    display: flex;
+    text-align: end;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 .copyright {
@@ -36,4 +94,10 @@ nav {
 .mdpForget {
     display: flex;
     justify-content: center;
+}
+
+footer {
+    background-color: whitesmoke;
+    margin-bottom: 20px;
+    color : black;
 }

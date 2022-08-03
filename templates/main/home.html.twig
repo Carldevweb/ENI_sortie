@@ -5,6 +5,7 @@
  {% block body %}
      <h3>Filter les sorties</h3>
      <form>
+         <div>
          <table>
              <tr>
                  <td>
@@ -31,13 +32,15 @@
                              </td>
                          </tr>
                          <tr>
-                             <td>Entre  </td>
+                             <td>Entre</td>
                              <td><input type="date" placeholder="Select Date"></td>
-                             <td>et  </td>
+                             <td>et</td>
                              <td><input type="date" placeholder="Select Date"></td>
                          </tr>
                      </table>
                  </td>
+                 </div>
+         <div>
                  <td>
                      <input type="checkbox" id="check1" name="check1" checked>
                      <label for="check1">Sorties dont je suis l'organisateur/trice</label>
@@ -51,14 +54,13 @@
                      <input type="checkbox" id="check4" name="check4" >
                      <label for="check4">Sorties passées </label>
                  </td>
+         </div>
                  <td>
                      <button > Rechercher</button>
                  </td>
              </tr>
          </table>
      </form>
-     <div>
-     </div>
      <div>
          <button > Créer Une Sortie</button>
      </div>

@@ -1,56 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="{{ asset('img/logo.png') }}" alt="Logo Sortir.com">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        <link rel="icon" href="{{ asset('img/logo.png') }}">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{ asset('img/logo.PNG') }}">
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-    <header>
-        <div class="container_header">
-            <div class="row">
-                <div class="col-3">
-                    <h1 class="header-logo">
-                        <a href="{{ path('home') }}" title="A Web Page">
-                            <img width="100px" height="100px" src="{{ asset('img/logo.png') }} " alt="Logo Sortir.com">
-                        </a>
-                    </h1>
-                </div>
 
-                <div class="col-6" style="direction: rtl">
-                    <ul class="nav navbar-nav">
-                        <a class="navbar-brand" href="app_dev.php">Villes</a>
-                        <a href="app_dev.php/contact">campus</a>
-                        <a href="app_dev.php/liens">Accueil</a>
-                        <a href="app_dev.php/liens">Mon Profil</a>
-                        <a href="app_dev.php/liens">Se déconnecter</a>
-                    </ul>
-                </div>
-                <div class="col-3" style="direction: rtl">
-                    Date de jour : {{ "now"|date("m/d/Y") }}
-                    Participant : {{ 'user1' }}
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="container">
-            {% block body %}
+    <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
+</head>
+<body>
+<header>
 
-            {% endblock %}
-        </div>
-    </main>
-    {% block footer %}
-        <div class="container"></div>
+{% include("inc/nav.html.twig") %}
+</header>
+<main>
+
+    {% block body %}
+
     {% endblock %}
-    </body>
+
+
+</main>
+</body>
+<footer>
+    <div class="copyright">
+    <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
+    </div>
+</footer>
 </html>

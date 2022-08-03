@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="login">
+        {{ form_start(utilisateurForm) }}
+        {{ form_widget(utilisateurForm) }}
+        <button>Connection</button>
+        {{ form_end(utilisateurForm) }}
+    </div>
+{% endblock %}
+
+{% block title %}{% endblock %}

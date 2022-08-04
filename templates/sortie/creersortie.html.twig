@@ -6,11 +6,10 @@
 
 {% block body %}
 
-    {{ form_start(sortieForm) }}
-    {{ form_widget(sortieForm) }}
-
-    {{ form_end(sortieForm) }}
-
+    {{ form(sortieForm) }}
+    {{ form(campusForm) }}
+    {{ form(lieuForm) }}
+    {{ form(villeForm) }}
     <button>Enregistrer</button>
     <button>Publier la sortie</button>
     <button>Annuler</button>

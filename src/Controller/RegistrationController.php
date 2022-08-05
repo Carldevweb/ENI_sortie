@@ -27,7 +27,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $user->setRoles("ROLE_ADMIN");
+            $user->setRoles((array)"ROLE_ADMIN");
 
             $user->setPassword(
             $userPasswordHasher->hashPassword(

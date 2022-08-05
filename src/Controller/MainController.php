@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
@@ -15,14 +14,11 @@ class MainController extends AbstractController
     {
         return $this->render('main/forgottenMdp.html.twig');
     }
-
     /**
-     * @Route("/creerSortie", name="")
+     * @Route ("/rechercher", name="recherche_sortie")
      */
-    public function index(): Response
+    public function rechercher()
     {
         return $this->render('main/home.html.twig');
-
     }
-
 }

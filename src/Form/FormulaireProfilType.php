@@ -70,7 +70,8 @@ class FormulaireProfilType extends AbstractType
                     'Lyon' => 'Lyon',
                     'Marseille' => 'Marseille'
                 ],
-                'multiple'=> false
+                'multiple'=> false,
+                'label' => 'Campus'
     ])
 
             ->add('MaPhoto', FileType::class)

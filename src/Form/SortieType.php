@@ -34,10 +34,10 @@ class SortieType extends AbstractType
                 'label' => 'Date limite inscription'
             ])
             ->add('nbInscriptionsMax', IntegerType::class, [
-                'label' => 'Nombre de palces'
+                'label' => 'Nombre de places'
             ])
             ->add('infosSortie', TextType::class, [
-                'label' => 'Description et infos'
+                'label' => 'Description et infos :'
             ])
             ->add('etat')
         ;

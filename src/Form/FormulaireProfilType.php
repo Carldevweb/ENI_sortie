@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\ProfilUtilisateur;
+use phpDocumentor\Reflection\Types\Nullable;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -23,44 +24,23 @@ class FormulaireProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Pseudo', TextType::class)
-            ->add('Prenom')
-            ->add('Nom')
-            ->add('Telephone', NumberType::class)
-            ->add('Email', EmailType::class)
-            ->add('ConfirmationMotDePasse', RepeatedType::class, [
-                // Ajouts pour le type Repeated
-                // Doivent être placés au début
-                'type' => PasswordType::class,
-                'invalid_message' => 'Les valeurs pour les champs mots de passe doivent être identiques.',
-                'options' => ['attr' => ['class' => 'password-field']],
-                'required' => true,
-                'first_options'  => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Répétez le mot de passe'],
+            ->add('Pseudo', TextType::class, [
+                'label' => 'Pseudonyme :'
+            ])
+            ->add('Prenom', TextType::class, [
+                'label' => 'Prénom :'
+            ])
+            ->add('Nom', TextType::class, [
+                'label' => 'Nom :'
+            ])
+            ->add('Telephone', NumberType::class, [
+                'label' => 'Téléphone :'
+            ])
+            ->add('Email', EmailType::class, [
+                'label' => 'Adresse mail :'
+            ])
+            ->add('MotDePasse', PasswordType::class)
 
-                    'mapped' => false,
-                    'attr' => ['autocomplete' => 'new-password'],
-                    'constraints' => [
-                        new NotBlank([
-                            'message' => 'Mot de passe obligatoire',
-                        ]),
-                        new Length([
-                            'min' => 6,
-                            'minMessage' => 'Le mot de passe doit avoir une longueur minimum de {{ limit }} caractères.',
-                            // max length allowed by Symfony for security reasons
-                            'max' => 4096,
-                        ]),
-
-                        new Regex(
-                            [
-                                'pattern' => '/"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$"/',
-                                'message' => 'Le mot de passe doit contenir au moins une minuscule, une majuscule, un chiffre et un caractère spécial (autorisé : @, $, !, %, *, #, ?, &)'
-                            ]
-                        )
-                    ],
-                ]
-
-            )
             ->add('Campus', ChoiceType::class,[
                 'choices' => [
                     'Paris' => 'Paris',
@@ -74,7 +54,9 @@ class FormulaireProfilType extends AbstractType
                 'label' => 'Campus'
     ])
 
-            ->add('MaPhoto', FileType::class)
+            ->add('MaPhoto', FileType::class, [
+                'required' => false,
+            ])
         ;
     }
 

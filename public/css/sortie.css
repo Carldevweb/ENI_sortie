@@ -2,6 +2,11 @@ h1{
     text-align: center;
 }
 
+a{
+    text-decoration: none;
+    color : white;
+}
+
 .entier{
     display: flex;
     flex-direction: row;
@@ -21,7 +26,7 @@ h1{
 .boutonform{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 .button{
     display: inline-block;

@@ -26,5 +26,10 @@ form{
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
 }
-
+/*#formulaire_profil_ConfirmationMotDePasse_first{
+    display: flex;
+    justify-content: center;
+}

@@ -1,28 +1,46 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('img/sortirLogo.PNG') }}">
-    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
-    <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" href="{{ asset('img/sortirLogo2.PNG') }}">
+
+        <title>{% block title %}Sortie BDE ENI{% endblock %}</title>
+    </head>
 <body>
-<header>
-    <img src="{{ asset('img/sortirLogo.PNG') }}" alt="Logo Sortir.com">
-</header>
-<main>
-    {% block body %}{% endblock %}
-    <div class="mdpForget">
-    {% include('inc/mdpOublie.html.twig') %}
-    </div>
-</main>
-<footer>
-    <div class="copyright">
-    <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
-    </div>
-</footer>
+        <header>
+            {% include('inc/nav.html.twig') %}
+        </header>
+
+        <main>
+            {% block extrastyles %}
+                <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/nav.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/profil.css') }}">
+                <link rel="stylesheet" href="{{ asset('css/sortie.css') }}">
+            {%  endblock %}
+
+
+
+            {% block body %}{% endblock %}
+
+            {% block register %}{% endblock %}
+
+            {% block forget %}{% endblock %}
+
+            <!--<div class="mdpForget">
+
+            {% block oublie %}{% endblock %}
+
+            </div>-->
+        </main>
+
+    <footer>
+        <div class="copyright">
+        <p>&copy;ENI_sortie{{ 'now'|date('Y') }}</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,29 @@
+.entier {
+    display: flex;
+    justify-content: center;
+}
+.titreform{
+    text-align: center;
+    margin-top: -40px;
+}
+.clvform {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.clvform input  {
+    margin-left: -150px;
+}
+.sortieform input {
+    margin-left: -50px;
+}
+.boutonform{
+    text-align: center;
+    margin-top: 50px;
+}
+.lieuform {
+    margin-top: -50px;
+}
+.villeform {
+    margin-top: -50px;
+}

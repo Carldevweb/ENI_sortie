@@ -8,11 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/mdp", name="oublie_mdp")
+     * @Route("/", name="oublie_mdp")
      */
     public function mdp()
     {
         return $this->render('main/forgottenMdp.html.twig');
     }
-
 }

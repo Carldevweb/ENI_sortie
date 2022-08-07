@@ -11,7 +11,7 @@
     </head>
 <body>
         <header>
-            {% include('inc/nav.html.twig') %}
+            {% block nav %}{% include('inc/nav.html.twig') %}{% endblock %}
         </header>
 
         <main>
@@ -42,7 +42,7 @@
             <!--<div class="mdpForget">
 
             {% block oublie %}{% endblock %}
-
+            {% block sortie%}{% endblock %}
             </div>-->
         </main>
 

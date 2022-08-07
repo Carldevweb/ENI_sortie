@@ -36,29 +36,31 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $prenom;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $administrateur;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $actif;
+
+
 
     public function getId(): ?int
     {
@@ -154,7 +156,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -166,7 +168,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setPrenom(?string $prenom): self
     {
         $this->prenom = $prenom;
 
@@ -178,7 +180,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->telephone;
     }
 
-    public function setTelephone(int $telephone): self
+    public function setTelephone(?int $telephone): self
     {
         $this->telephone = $telephone;
 
@@ -190,7 +192,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->administrateur;
     }
 
-    public function setAdministrateur(bool $administrateur): self
+    public function setAdministrateur(?bool $administrateur): self
     {
         $this->administrateur = $administrateur;
 
@@ -202,7 +204,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->actif;
     }
 
-    public function setActif(bool $actif): self
+    public function setActif(?bool $actif): self
     {
         $this->actif = $actif;
 

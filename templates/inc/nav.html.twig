@@ -10,11 +10,12 @@
     <container class="nav-right">
         <nav>
             <ul class="snip1217">
-                <li><a href="/ENI_sortie/public" title="Accueil">Accueil</a></li>
-                <li><a href="/ENI_sortie/public/profil" title="Mon Profil">Mon Profil</a></li>
-                <li><a href="/ENI_sortie/public/accueil" title="Se déconnecter">Se déconnecter</a></li>
+                <li><a href="{{ path('accueil_sortie') }}">Accueil</a></li>
+                <li><a href="{{ path('profil_utilisateur') }}">Mon profil</a></li>
+                <li><a href="{{ path('app_login') }}">Déconnexion</a></li>
             </ul>
         </nav>
     </container>
 
+</container>
 </container>

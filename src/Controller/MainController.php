@@ -14,11 +14,5 @@ class MainController extends AbstractController
     {
         return $this->render('main/forgottenMdp.html.twig');
     }
-    /**
-     * @Route ("/rechercher", name="recherche_sortie")
-     */
-    public function rechercher()
-    {
-        return $this->render('main/home.html.twig');
-    }
+
 }

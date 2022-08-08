@@ -1,29 +1,55 @@
-.entier {
+h1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color : white;
+}
+
+.entier{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sortieform, .clvform{
+    margin: 3rem;
+}
+
+#sortie_infosSortie{
+    height: 100px;
+}
+
+.boutonform{
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
-.titreform{
+.button{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
     text-align: center;
-    margin-top: -40px;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #468ead;
+    border-radius: 15px;
+    margin: 1rem;
+    border-color: whitesmoke;
+    border-width: 2px;
 }
-.clvform {
-    display: flex;
-    flex-direction: column;
-    margin-left: 30px;
+
+.button:hover {background-color: #0647a7
 }
-.clvform input  {
-    margin-left: -150px;
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-.sortieform input {
-    margin-left: -50px;
-}
-.boutonform{
-    text-align: center;
-    margin-top: 50px;
-}
-.lieuform {
-    margin-top: -50px;
-}
-.villeform {
-    margin-top: -50px;
-}
+

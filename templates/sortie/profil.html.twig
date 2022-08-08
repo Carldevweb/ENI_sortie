@@ -1,0 +1,26 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}
+    Profil de l'utilisateur | {{ parent() }}
+{% endblock %}
+
+
+{% block body %}
+    <div>
+        {{ form_start(profilForm) }}
+
+            {{  form_widget(profilForm) }}
+
+                <div class="boutonform">
+                    <button class="button"><!--<a href="../public/accueil">Enregistrer</a>-->Enregistrer</button>
+                    <button class="button"><a href="../public/profil">Annuler</a></button>
+                </div>
+
+        {{ form_start(profilForm) }}
+
+    </div>
+
+
+
+{% endblock %}
+

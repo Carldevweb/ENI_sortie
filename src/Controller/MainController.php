@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/", name="oublie_mdp")
+     * @Route("/mdp", name="oublie_mdp")
      */
     public function mdp()
     {

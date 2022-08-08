@@ -52,6 +52,11 @@ class Sortie
      */
     private $etat;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Campus", inversedBy="sortie")
+     */
+    private $campus;
+
     public function getId(): ?int
     {
         return $this->id;

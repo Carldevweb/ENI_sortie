@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Campus;
+use App\Entity\Sortie;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MainController extends AbstractController
@@ -17,8 +21,26 @@ class MainController extends AbstractController
     /**
      * @Route ("/rechercher", name="recherche_sortie")
      */
-    public function rechercher()
+    public function rechercher(Request $request, ManagerRegistry $doctrine)
     {
-        return $this->render('main/home.html.twig');
+
+        $parameters = $request->request;
+        if($parameters->get('startDate') != "") {
+            $campusId = $doctrine->getRepository(Campus::class)->findOneBy(['nom' => $parameters->get('campus')]);
+
+            if($campusId) {
+                $fetchData = $doctrine->getRepository(Sortie::class)->getOuts(
+                    $campusId->getId(),$parameters->get('startDate'),$parameters->get('outName')
+                );
+                return $this->render('main/search.html.twig', [
+                    'data'=>  $fetchData
+                ]);
+            }
+        }
+        return $this->render('main/search.html.twig');
     }
+
+
+
+
 }

@@ -22,6 +22,11 @@ class Campus
      */
     private $nom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Sortie", mappedBy="campus")
+     */
+    private $sortie;
+
     public function getId(): ?int
     {
         return $this->id;

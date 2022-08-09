@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Form;
 
@@ -18,7 +19,8 @@ class ProfilController extends AbstractController
      */
     public function profil(
         Request $request,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        UserPasswordHasherInterface $hasher
     ): Response
     {
         $profil = new ProfilUtilisateur();
@@ -30,6 +32,8 @@ class ProfilController extends AbstractController
 
             if ($profilForm ->isSubmitted())
             {
+            $motDePasse = $hasher ->hashPassword($profil, $profilForm->get("MotDePasse")->getData());
+            $profil->setMotDePasse($motDePasse);
             $entityManager->persist($profil);
             $entityManager->flush();
             }

@@ -5,11 +5,12 @@ namespace App\Entity;
 use App\Repository\ProfilUtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\Types\Self_;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=ProfilUtilisateurRepository::class)
  */
-class ProfilUtilisateur
+class ProfilUtilisateur implements PasswordAuthenticatedUserInterface
 {
     /**
      * @ORM\Id
@@ -44,14 +45,10 @@ class ProfilUtilisateur
     private $Email;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=false)
      */
     private $MotDePasse;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $ConfirmationMotDePasse;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -141,18 +138,6 @@ class ProfilUtilisateur
         return $this;
     }
 
-    public function getConfirmationMotDePasse(): ?string
-    {
-        return $this->ConfirmationMotDePasse;
-    }
-
-    public function setConfirmationMotDePasse(string $ConfirmationMotDePasse): self
-    {
-        $this->ConfirmationMotDePasse = $ConfirmationMotDePasse;
-
-        return $this;
-    }
-
     public function getCampus(): ?string
     {
         return $this->Campus;
@@ -175,6 +160,11 @@ class ProfilUtilisateur
         $this->MaPhoto = $MaPhoto;
 
         return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->getMotDePasse();
     }
 }
 

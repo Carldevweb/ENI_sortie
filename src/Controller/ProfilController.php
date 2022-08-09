@@ -26,12 +26,26 @@ class ProfilController extends AbstractController
         $profil = new ProfilUtilisateur();
         $profilForm = $this -> createForm(FormulaireProfilType::class, $profil);
 
-        dump($profilForm);
-        $profilForm->handleRequest($request);
-        dump($profilForm);
 
-            if ($profilForm ->isSubmitted())
+        $profilForm->handleRequest($request);
+
+
+            if ($profilForm ->isSubmitted() && $profilForm->isValid())
             {
+
+            $file = $profilForm->get('MaPhoto')->getData();
+                if ($file){
+                    $newFileName = $profil->getNom()."-".$profil->getId()."
+                    .".$file->guessExtension();
+
+                    $fileDirectory = $this->getParameter('upload_MaPhoto_Profil_dir');
+
+                    $file->move($fileDirectory, $newFileName);
+
+                    $profil->setMaPhoto($newFileName);
+                }
+
+
             $motDePasse = $hasher ->hashPassword($profil, $profilForm->get("MotDePasse")->getData());
             $profil->setMotDePasse($motDePasse);
             $entityManager->persist($profil);
@@ -40,7 +54,8 @@ class ProfilController extends AbstractController
 
         return $this->render('sortie/profil.html.twig',
             [
-            'profilForm' => $profilForm->createView()
+            'profilForm' => $profilForm->createView(),
+            'avatarPix' => $profil->getMaPhoto()
             ]);
     }
 }

@@ -6,8 +6,19 @@
 
 
 {% block body %}
+
+
+    <div class="profil_cercle">
+
+        <img src="{{ asset('public\img\avatar' ~ avatarPix)  }}" alt="avatar">
+
+    </div>
+
+    {{ form_start(profilForm) }}
+
+
+
     <div>
-        {{ form_start(profilForm) }}
 
             {{  form_widget(profilForm) }}
 
@@ -17,7 +28,6 @@
                 </div>
 
         {{ form_end(profilForm) }}
-
     </div>
 
 

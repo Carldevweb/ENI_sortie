@@ -1,40 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
+    Créer une sortie | {{ parent() }}
 {% endblock  %}
 
 {% block body %}
     <h1 class="titreform">Créer une Sortie</h1>
 
-    <div class="entier">
+    {{ form_start(sortieForm)}}
+    {{ form_widget(sortieForm) }}
 
-        <div class="sortieform">
-            {{ form(sortieForm)}}
+        <div class="boutonform">
+            <a href="../public/accueil" class="button"><button type="submit">Enregistrer</button></a>
+            <a href="{{ path('accueil_sortie') }}"><button class="button">Publier la sortie</button></a>
+            <a href="{{ path('accueil_sortie') }}"><button class="button">Annuler</button></a>
         </div>
 
-        <div class="clvform">
-
-            <div class="campusform">
-                {{ form(campusForm) }}
-            </div>
-
-            <div class="lieuform">
-                {{ form(lieuForm) }}
-            </div>
-
-            <div class="villeform">
-                {{ form(villeForm) }}
-            </div>
-
-        </div>
-  </div>
-
-    <div class="boutonform">
-        <a href="{{ path('accueil_sortie') }}"><button class="button" type="submit">Enregistrer</button></a>
-        <a href="{{ path('accueil_sortie') }}"><button class="button">Publier la sortie</button></a>
-        <a href="{{ path('accueil_sortie') }}"><button class="button">Annuler</button></a>
-    </div>
+    {{ form_end(sortieForm) }}
 
 
 {% endblock  %}

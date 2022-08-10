@@ -59,9 +59,9 @@ class Campus
     }
 
     /**
-     * @return Collection<int, Participant>
+     * @return array
      */
-    public function getParticipants(): Collection
+    public function getParticipants(): array
     {
         return $this->participants;
     }
@@ -147,4 +147,5 @@ class Campus
 
         return $this;
     }
+
 }

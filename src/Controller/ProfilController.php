@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\ProfilUtilisateur;
+
 use App\Form\FormulaireProfilType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -11,7 +11,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Form;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProfilController extends AbstractController

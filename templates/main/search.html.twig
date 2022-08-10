@@ -57,13 +57,13 @@
                  <td></td>
 
                  <td>
-                     <button type="submit" class="form-control">Rechercher</button>
+                     <button class="button"><a href="../public/profil">Rechercher</button>
                  </td>
              </tr>
          </table>
      </form>
      <div>
-         <a href="{{ path('sortie_creer') }}"><button class="form-control" > Créer une Sortie</button></a>
+         <a href="{{ path('sortie_creer') }}"><button class="button"><a href="../public/profil"> Créer une Sortie</button></a>
      </div>
      {% if data is defined and not null %}
          <table style="border: 1px">

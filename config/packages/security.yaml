@@ -6,6 +6,7 @@ security:
 
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
+        users_in_memory: { memory: null }
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
@@ -24,7 +25,10 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 # target: app_any_route
-
+            remember_me:
+                secret:     '%kernel.secret%'
+                lifetime:   604800 # 1 week in seconds
+                path:       /
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 

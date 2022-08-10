@@ -50,7 +50,7 @@ class Sortie
     private $infosSortie;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $etat;
 
@@ -61,24 +61,24 @@ class Sortie
 
     /**
      * @ORM\ManyToOne(targetEntity=Participant::class, inversedBy="organisateur")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $participant;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="site_organisateur")
+     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="site_organisateur", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $campus;
 
     /**
      * @ORM\ManyToOne(targetEntity=Etat::class, inversedBy="sorties")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $type_etat;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="trips")
+     * @ORM\ManyToOne(targetEntity=Lieu::class, inversedBy="trips", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $sorties_lieu;

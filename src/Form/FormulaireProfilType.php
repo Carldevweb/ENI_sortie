@@ -68,7 +68,7 @@ class FormulaireProfilType extends AbstractType
                 ],
             ])
 
-            ->add('rattachement')
+            ->add('rattachement', )
 
             ->add('maPhoto', FileType::class, [
                 'required' => false, 'data_class' => null,

@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Annuler | {{ parent() }}
+{% endblock %}
+ {% block body %}
+
+     <h1 style="text-align:center;color: black">Annuler Une Sortie</h1>
+
+         <table style="margin-left:auto;margin-right:auto;">
+             <tr>
+
+           <td style="white-space: normal; width:200px; color:black;">
+            Nom de la sortie:
+           </td>
+
+             </tr>
+             <td></td>
+             <tr>
+                 <td style="white-space: normal; width:200px; color:black;">
+                    Date de la sortie:
+                 </td>
+             </tr>
+             <td></td>
+             <tr>
+                 <td style="color:black;">
+                     Campus:
+                 </td>
+             </tr>
+             <td></td>
+             <tr>
+                 <td style="color:black;">
+                     Lieu:
+                 </td>
+             </tr>
+             <td></td>
+             <tr>
+                 <td style="color:black;">
+                     <label for="Motif">Motif:</label>
+                 <td>
+                     <textarea id="story" name="story"
+                               rows="5" cols="33">
+                     </textarea>
+                 </td>
+                 </td>
+             </tr>
+             <div >
+                 <td>
+                 <button class="form-control"> Enregistrer</button>
+                 </td>
+
+             </div>
+             <div>
+                 <td>
+                     <button class="form-control" > Annuler</button>
+                 </td>
+             </div>
+
+         </table>
+
+
+
+
+
+
+
+
+ {% endblock %}

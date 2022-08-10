@@ -4,7 +4,7 @@
 {% endblock %}
  {% block body %}
      <h3 style="color:black;">Filter les sorties</h3>
-     <form>
+     <form action="{{ path('recherche_sortie') }}" method ="post">
          <table>
              <tr>
                  <td>
@@ -14,10 +14,11 @@
                                  Campus
                              </td>
                              <td style="white-space: normal; width:100px;">
-                                 <select class="form-control" id="supervisor">
+                                 <select class="form-control" id="supervisor" name="campus">
                                      {% for i  in 0..3 %}
                                          {% set selected = '' %}
                                          <option value="Saint Herblain" {{ selected }}>{{ 'Saint Herblain'  }}</option>
+                                         <option value="Saint Sebastien Sur Loire" {{ selected }}>{{ 'Saint Sebastien Sur Loire'}}</option>
                                      {% endfor %}
                                  </select>
                              </td>
@@ -27,14 +28,14 @@
                                  Le nom de la sortie contient:
                              </td>
                              <td>
-                                 <input type="text" class="form-control" placeholder="Rechercher" name ="search">
+                                 <input type="text" class="form-control" placeholder="nom" name="outName">
                              </td>
                          </tr>
                          <tr>
                              <td style="color:black;">Entre</td>
-                             <td><input type="date" placeholder="Select Date"></td>
+                             <td><input type="date" placeholder="Select Date" name="startDate"></td>
                              <td style="white-space: normal; width:30px;color:black;">et</td>
-                             <td><input type="date" placeholder="Select Date"></td>
+                             <td><input type="date" placeholder="Select Date" name="endDate"></td>
                          </tr>
                      </table>
                  </td>
@@ -52,15 +53,45 @@
                      <input type="checkbox" id="check4" name="check4" >
                      <label for="check4">Sorties passées </label>
                  </td>
+                 <td></td>
+                 <td></td>
 
                  <td>
-                     <button > Rechercher</button>
+                     <button type="submit" class="form-control">Rechercher</button>
                  </td>
              </tr>
          </table>
      </form>
      <div>
-         <a href="{{ path('sortie_creer') }}"><button > Créer une Sortie</button></a>
+         <button class="form-control" > Créer une Sortie</button>
      </div>
+     {% if data is defined and not null %}
+         <table style="border: 1px">
+             <tr>
+                 <th>Nom de la sortie</th>
+                 <th>Date de la sortie</th>
+                 <th>Clôture</th>
+                 <th>inscrits/places</th>
+                 <th>Etat</th>
+                 <th>Inscrit</th>
+                 <th>Organisateur</th>
+                 <th>Action</th>
+             </tr>
+             {% for out in data  %}
+                 <tr>
+                     <td>{{ out.nom  }}</td>
+                     <td>{{ out.dateHeureDebut|date('d/m/Y') }}</td>
+                     <td> {{ out.dateLimiteInscription|date('dd/mm/Y h:m' ) }}</td>
+                     <td> {{ 'number' }} / {{ out.nbInscriptionsMax }}</td>
+                     <td>{{ out.etat }}</td>
+                     <td>{{ 'user' }}</td>
+
+
+                 </tr>
+             {% endfor %}
+         </table>
+
+     {% endif %}
+
  {% endblock %}
 

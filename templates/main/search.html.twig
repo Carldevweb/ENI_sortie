@@ -15,10 +15,9 @@
                              </td>
                              <td style="white-space: normal; width:100px;">
                                  <select class="form-control" id="supervisor" name="campus">
-                                     {% for i  in 0..3 %}
+                                     {% for campus  in campusList %}
                                          {% set selected = '' %}
-                                         <option value="Saint Herblain" {{ selected }}>{{ 'Saint Herblain'  }}</option>
-                                         <option value="Saint Sebastien Sur Loire" {{ selected }}>{{ 'Saint Sebastien Sur Loire'}}</option>
+                                         <option value="{{ campus.nom }}" {{ selected }}>{{ campus.nom  }}</option>
                                      {% endfor %}
                                  </select>
                              </td>
@@ -57,7 +56,7 @@
                  <td></td>
 
                  <td>
-                     <button class="button"><a href="../public/profil">Rechercher</button>
+                     <button class="button" type="submit">Rechercher</button>
                  </td>
              </tr>
          </table>
@@ -81,7 +80,7 @@
                  <tr>
                      <td>{{ out.nom  }}</td>
                      <td>{{ out.dateHeureDebut|date('d/m/Y') }}</td>
-                     <td> {{ out.dateLimiteInscription|date('dd/mm/Y h:m' ) }}</td>
+                     <td> {{ out.dateLimiteInscription|date('d/m/Y h:m' ) }}</td>
                      <td> {{ 'number' }} / {{ out.nbInscriptionsMax }}</td>
                      <td>{{ out.etat }}</td>
                      <td>{{ 'user' }}</td>

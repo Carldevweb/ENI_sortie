@@ -42,15 +42,15 @@ class SortieRepository extends ServiceEntityRepository
     /**
      * @return Sortie[] Returns an array of Sortie objects
     */
-    public function getOuts($campusId, $startDate, $name): array
+    public function getOuts($campusId, $startDate, $endDate, $name): array
     {
 
         return $this->createQueryBuilder('s')
-            ->Where('s.nom = :name')
-            ->andWhere('s.dateHeureDebut <= :startDate')
+            ->andWhere('s.dateHeureDebut >= :startDate')
+            ->andWhere('s.dateHeureDebut <= :endDate')
             ->andWhere('s.campus = :campusId')
-            ->setParameter('name', $name)
             ->setParameter('startDate', $startDate)
+            ->setParameter('endDate', $endDate)
             ->setParameter('campusId', $campusId)
             ->orderBy('s.id', 'ASC')
             ->setMaxResults(10)

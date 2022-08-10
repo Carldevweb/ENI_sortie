@@ -84,8 +84,13 @@
                      <td> {{ 'number' }} / {{ out.nbInscriptionsMax }}</td>
                      <td>{{ out.etat }}</td>
                      <td>{{ 'user' }}</td>
-
-
+                     {% if out.etat is same as('en coure') %}
+                        <td><a href="#">Afficher</a></td>
+                     {% elseif out.etat is same as('Ouvert') %}
+                         <td><a href="{{ path('annuler', {id: out.id})}}">Annuler</a></td>
+                     {% elseif  out.etat is same as('En creation')%}
+                         <td><a href="#">Modifier</a></td>
+                     {% endif %}
                  </tr>
              {% endfor %}
          </table>

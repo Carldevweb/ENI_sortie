@@ -40,9 +40,6 @@ class MainController extends AbstractController
                 ]);
             }
         }
-        $campusList = $doctrine
-            ->getRepository(Campus::class)
-            ->findAll();
         $sortiesList = $doctrine
             ->getRepository(Sortie::class)
             ->findAll();

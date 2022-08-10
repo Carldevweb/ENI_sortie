@@ -14,19 +14,19 @@
            </td>
 
              </tr>
-             <td></td>
+             <td>{{ sortie.nom }}</td>
              <tr>
                  <td style="white-space: normal; width:200px; color:black;">
                     Date de la sortie:
                  </td>
              </tr>
-             <td></td>
+             <td>{{ sortie.dateHeureDebut|date('d/m/Y') }}</td>
              <tr>
                  <td style="color:black;">
                      Campus:
                  </td>
              </tr>
-             <td></td>
+             <td>{{ campus.nom}}</td>
              <tr>
                  <td style="color:black;">
                      Lieu:
@@ -45,13 +45,13 @@
              </tr>
              <div >
                  <td>
-                 <button class="form-control"> Enregistrer</button>
+                 <button class="form-control"><a href="#">Enregistrer</a> </button>
                  </td>
 
              </div>
              <div>
                  <td>
-                     <button class="form-control" > Annuler</button>
+                     <button class="form-control" ><a href="/recherche">Annuler</a> </button>
                  </td>
              </div>
 

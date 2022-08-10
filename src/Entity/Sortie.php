@@ -248,5 +248,11 @@ class Sortie
         return $this;
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

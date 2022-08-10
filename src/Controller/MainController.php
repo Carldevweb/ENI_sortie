@@ -28,15 +28,12 @@ class MainController extends AbstractController
         $campusList = $doctrine
             ->getRepository(Campus::class)
             ->findAll();
-        dump('amasd', $parameters);
         if($parameters->get('startDate') != "") {
             $campusId = $doctrine->getRepository(Campus::class)->findOneBy(['nom' => $parameters->get('campus')]);
-            dump($campusId);
             if($campusId) {
                 $fetchData = $doctrine->getRepository(Sortie::class)->getOuts(
                     $campusId->getId(),$parameters->get('startDate'), $parameters->get('endDate'),$parameters->get('outName')
                 );
-                dump($fetchData);
                 return $this->render('main/search.html.twig', [
                     'data'=>  $fetchData,
                     'campusList' => $campusList

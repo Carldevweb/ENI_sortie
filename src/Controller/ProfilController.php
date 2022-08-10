@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\ProfilUtilisateur;
 use App\Form\FormulaireProfilType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Form;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProfilController extends AbstractController
 {
@@ -20,10 +22,10 @@ class ProfilController extends AbstractController
     public function profil(
         Request $request,
         EntityManagerInterface $entityManager,
-        UserPasswordHasherInterface $hasher
-    ): Response
+        UserPasswordHasherInterface $hasher,
+        SluggerInterface $slugger): Response
     {
-        $profil = new ProfilUtilisateur();
+        $profil = $this->getUser();
         $profilForm = $this -> createForm(FormulaireProfilType::class, $profil);
 
 
@@ -32,22 +34,32 @@ class ProfilController extends AbstractController
 
             if ($profilForm ->isSubmitted() && $profilForm->isValid())
             {
+                $file = $profilForm->get('maPhoto')->getData();
 
-            $file = $profilForm->get('MaPhoto')->getData();
                 if ($file){
-                    $newFileName = $profil->getNom()."-".$profil->getId()."
-                    .".$file->guessExtension();
+                    $originalFileName = pathinfo($file->getClientOriginalName
+                    (), PATHINFO_FILENAME);
 
-                    $fileDirectory = $this->getParameter('upload_MaPhoto_Profil_dir');
+                    $safeFilename = $slugger->slug($originalFileName);
 
-                    $file->move($fileDirectory, $newFileName);
+                    $newFileName = $safeFilename.".".uniqid().".".$file->guessExtension();
+
+                    try{
+                        $file->move(
+                            $this->getParameter('avatar_directory'),
+                            $newFileName
+                        );
+                    } catch (FileException $e){
+
+                    }
 
                     $profil->setMaPhoto($newFileName);
+
                 }
 
 
-            $motDePasse = $hasher ->hashPassword($profil, $profilForm->get("MotDePasse")->getData());
-            $profil->setMotDePasse($motDePasse);
+            $motDePasse = $hasher ->hashPassword($profil, $profilForm->get("password")->getData());
+            $profil->setPassword($motDePasse);
             $entityManager->persist($profil);
             $entityManager->flush();
             }
@@ -55,7 +67,9 @@ class ProfilController extends AbstractController
         return $this->render('sortie/profil.html.twig',
             [
             'profilForm' => $profilForm->createView(),
-            'avatarPix' => $profil->getMaPhoto()
+            'profil' => $profil,
             ]);
     }
+
+
 }

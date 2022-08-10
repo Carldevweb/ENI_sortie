@@ -78,6 +78,16 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $rattachement;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pseudo;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $maPhoto;
+
 
     public function __construct()
     {
@@ -310,6 +320,30 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRattachement(?Campus $rattachement): self
     {
         $this->rattachement = $rattachement;
+
+        return $this;
+    }
+
+    public function getPseudo(): ?string
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo(string $pseudo): self
+    {
+        $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function getMaPhoto(): ?string
+    {
+        return $this->maPhoto;
+    }
+
+    public function setMaPhoto(?string $maPhoto): self
+    {
+        $this->maPhoto = $maPhoto;
 
         return $this;
     }

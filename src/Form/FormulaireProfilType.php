@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Participant;
 use App\Entity\ProfilUtilisateur;
 use phpDocumentor\Reflection\Types\Nullable;
 use Symfony\Component\Form\AbstractType;
@@ -24,22 +25,22 @@ class FormulaireProfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Pseudo', TextType::class, [
+            ->add('pseudo', TextType::class, [
                 'label' => 'Pseudonyme :'
             ])
-            ->add('Prenom', TextType::class, [
+            ->add('prenom', TextType::class, [
                 'label' => 'Prénom :'
             ])
-            ->add('Nom', TextType::class, [
+            ->add('nom', TextType::class, [
                 'label' => 'Nom :'
             ])
-            ->add('Telephone', NumberType::class, [
+            ->add('telephone', NumberType::class, [
                 'label' => 'Téléphone :'
             ])
-            ->add('Email', EmailType::class, [
+            ->add('email', EmailType::class, [
                 'label' => 'Adresse mail :'
             ])
-            ->add('MotDePasse', RepeatedType::class, [
+            ->add('password', RepeatedType::class, [
                 // Ajouts pour le type Repeated
                 // Doivent être placés au début
                 'type' => PasswordType::class,
@@ -67,21 +68,10 @@ class FormulaireProfilType extends AbstractType
                 ],
             ])
 
-            ->add('Campus', ChoiceType::class,[
-                'choices' => [
-                    'Paris' => 'Paris',
-                    'Bordeaux' => 'Bordeaux',
-                    'Rennes' => 'Rennes',
-                    'Nantes' => 'Nantes',
-                    'Lyon' => 'Lyon',
-                    'Marseille' => 'Marseille'
-                ],
-                'multiple'=> false,
-                'label' => 'Campus'
-    ])
+            ->add('rattachement')
 
-            ->add('MaPhoto', FileType::class, [
-                'required' => false,
+            ->add('maPhoto', FileType::class, [
+                'required' => false, 'data_class' => null,
             ])
         ;
     }
@@ -89,7 +79,7 @@ class FormulaireProfilType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => ProfilUtilisateur::class,
+            'data_class' => Participant::class,
         ]);
     }
 }

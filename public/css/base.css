@@ -67,6 +67,12 @@ img {
     margin-right: -55px;
 }
 
+.mdpForge
+{
+    display: flex;
+    justify-content: center;
+}
+
 footer {
     background-color: whitesmoke !important;
     margin-bottom: 10px;

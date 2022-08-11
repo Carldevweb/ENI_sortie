@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Sortie;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -19,34 +20,47 @@ class SortieType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Nom de la sortie'
+                'label' => 'Nom de la sortie :'
             ])
             ->add('dateHeureDebut', DateTimeType::class, [
                 'html5'=>true,
                 'widget'=>'single_text',
-                'label' => 'Date et heure de la sortie',
+                'label' => 'Date et heure de la sortie :',
+
 
             ])
             ->add('duree', IntegerType::class, [
-                'label' => 'Durée'
+                'label' => 'Durée en Heure :'
             ])
             ->add('dateLimiteInscription', DateType::class, [
                 'html5' => true,
                 'widget' => 'single_text',
-                'label' => 'Date limite inscription',
+                'label' => 'Date limite inscription :',
 
             ])
             ->add('nbInscriptionsMax', IntegerType::class, [
-                'label' => 'Nombre de places'
+                'label' => 'Nombre de places :'
             ])
             ->add('infosSortie', TextType::class, [
                 'label' => 'Description et infos :'
             ])
-            ->add('etat')
-            ->add('sorties_lieu', LieuType::class,)
-            ->add('campus', CampusType::class)
+            ->add('etat', ChoiceType::class, [
+                'label' => ' ',
+                'attr'   =>  array(
+                'class'   => 'etat'
+                )
+            ])
+
+            ->add('sorties_lieu', LieuType::class, [
+                'label' => ' '
+            ])
+
+            ->add('campus', CampusType::class, [
+                'label' => ' '
+            ])
             ->add('ville', VilleType::class, [
-                'mapped' => false
+                'mapped' => false,
+                'label' => ' '
             ])
         ;
     }

@@ -27,6 +27,9 @@ nav a:hover{
     color: rgb(6, 71, 167);
 }
 
+.mdpForget, ul{
+    margin-right: -30px;
+}
 
 
 .container

@@ -2,6 +2,12 @@
 
 {% block title %}Log in!{% endblock %}
 
+{% block nav %}
+    <div class="logo">
+        <img src="{{ asset('img/sortirLogo2.png') }}" alt="Logo Sortir.com">
+    </div>
+{% endblock %}
+
 {% block body %}
 <form method="post">
     {% if error %}
@@ -32,5 +38,13 @@
    </button>
 
 </form>
-    {% block nav %}{% include('inc/mdpOublie.html.twig') %}{% endblock %}
+
+
+
+    {% block mdpForget %}
+        <div class="mdpForget">
+        {% include('inc/mdpOublie.html.twig') %}
+        </div>
+    {% endblock %}
+
 {% endblock %}

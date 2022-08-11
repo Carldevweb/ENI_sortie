@@ -33,7 +33,7 @@ class SortieController extends AbstractController
             $entityManager->flush();;
 
 
-            return $this->redirectToRoute('accueil_sortie');
+            return $this->redirectToRoute('recherche_sortie');
 
         }
 

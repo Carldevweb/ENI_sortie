@@ -41,7 +41,7 @@ security:
          #- { path: ^/register, roles: ROLE_ADMIN }
          - { path: ^/sortie, roles: ROLE_USER }
          - { path: ^/profil, roles: ROLE_USER }
-         - { path: ^/accueil, roles: ROLE_USER }
+         - { path: ^/rechercher, roles: ROLE_USER }
          - { path: ^/sortie, roles: ROLE_USER }
 
 when@test:

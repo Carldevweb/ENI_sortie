@@ -11,12 +11,12 @@
     {{ form_widget(sortieForm) }}
 
         <div class="boutonform">
-            <a href="{{ path('accueil_sortie') }}"><button class="button">Enregistrer</button></a>
-            <a href="{{ path('accueil_sortie') }}"><button class="button">Publier la sortie</button></a>
-            <a href="{{ path('accueil_sortie') }}"><button class="button">Annuler</button></a>
+            <a href="{{ path('recherche_sortie') }}"><button class="button">Enregistrer</button></a>
+            <a href="{{ path('recherche_sortie') }}"><button class="button">Publier la sortie</button></a>
+
         </div>
 
     {{ form_end(sortieForm) }}
 
-
+    <a href="{{ path('recherche_sortie') }}"><button class="button">Annuler</button></a>
 {% endblock  %}

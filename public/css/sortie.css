@@ -62,3 +62,8 @@ a{
 .etat, .etat .required{
     visibility: hidden;
 }
+
+.left{
+    display: flex;
+    align-items: flex-start;
+}

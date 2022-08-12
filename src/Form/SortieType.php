@@ -20,7 +20,8 @@ class SortieType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class, [
-                'label' => 'Nom de la sortie :'
+                'label' => 'Nom de la sortie :',
+
             ])
             ->add('dateHeureDebut', DateTimeType::class, [
                 'html5'=>true,

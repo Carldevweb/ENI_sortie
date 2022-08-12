@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Participant;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -44,8 +45,8 @@ class FormulaireProfilType extends AbstractType
                 'invalid_message' => 'Les valeurs pour les champs mots de passe doivent être identiques.',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
-                'first_options'  => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Répétez le mot de passe'],
+                'first_options'  => ['label' => 'Mot de passe :'],
+                'second_options' => ['label' => 'Répétez le mot de passe :'],
 
                 // Code généré par la commande 'make:registration-form'
                 // instead of being set onto the object directly,
@@ -65,9 +66,22 @@ class FormulaireProfilType extends AbstractType
                 ],
             ])
 
-            ->add('rattachement', )
+            ->add('rattachement', ChoiceType::class, [
+                'label' => 'Campus :',
+                    'choices' => [
+                    'Paris' => 'Paris',
+                    'Lyon' => 'Lyon',
+                    'Marseille' => 'Marseille',
+                    'Bordeaux' => 'Bordeaux',
+                    'Lilles' => 'Lilles',
+                    'Rennes' => 'Rennes',
+                    'Nantes' =>'Nantes'
+
+                ]
+            ] )
 
             ->add('maPhoto', FileType::class, [
+                'label' => 'Ma Photo :',
                 'required' => false, 'data_class' => null,
             ])
         ;

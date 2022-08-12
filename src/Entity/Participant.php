@@ -79,7 +79,7 @@ class Participant implements UserInterface, PasswordAuthenticatedUserInterface
     private $rattachement;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $pseudo;
 

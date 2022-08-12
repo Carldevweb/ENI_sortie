@@ -74,8 +74,9 @@ class FormulaireProfilType extends AbstractType
                     'Marseille' => 'Marseille',
                     'Bordeaux' => 'Bordeaux',
                     'Lilles' => 'Lilles',
+                    'Nantes' =>'Nantes',
                     'Rennes' => 'Rennes',
-                    'Nantes' =>'Nantes'
+
 
                 ]
             ] )
